@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:students_projects/chatbot_example.dart';
 
 import 'akram_login_page.dart';
+import 'nawaf_home_page.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ChatbotExample(),
+      home: NawafHomePage(),
     );
   }
 }
