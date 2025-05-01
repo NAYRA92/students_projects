@@ -12,7 +12,7 @@ class ChatbotExample extends StatefulWidget {
 //model settings
 GenerativeModel _mymodel = GenerativeModel(
     model: "gemini-2.0-flash",
-    apiKey: "AIzaSyAurk7gyMlYYT8hT8OZuc_scXffJXsPR8E",
+    apiKey: " ",
     systemInstruction: Content.text("""
 اذا تم الطلب من لكتابة رسالة صباحية فأنت توجهها للمهندسين فقط
   أنت تضيف ايموجيات سعيدة كذلك
