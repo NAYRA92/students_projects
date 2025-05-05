@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:students_projects/chatbot_example.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'akram_login_page.dart';
 import 'nawaf_home_page.dart';
 import 'splash_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp( //unerror will appear here, but it will go as soon as you import the needed Firebase packages
+      options: FirebaseOptions(
+          apiKey: "", //you will find apiKey, appId ... etc indside the google-services.json file that you download from firebase console!
+          appId: "",
+          messagingSenderId: "sendid",
+          projectId: "",
+          storageBucket: "")); 
   runApp(const MyApp());
 }
 

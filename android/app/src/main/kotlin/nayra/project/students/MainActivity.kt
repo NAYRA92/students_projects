@@ -1,4 +1,4 @@
-package com.example.students_projects
+package nayra.project.students
 
 import io.flutter.embedding.android.FlutterActivity
 

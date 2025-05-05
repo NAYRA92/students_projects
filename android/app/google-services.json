@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "37782216272",
+    "project_id": "flutter-course-may",
+    "storage_bucket": "flutter-course-may.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37782216272:android:3a6f0f63115f016dcafb55",
+        "android_client_info": {
+          "package_name": "nayra.project.students"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDKghGDKkEjYcbTiT9m_cLD2j9IkgiuAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
