@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:students_projects/chatbot_example.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:students_projects/register_new_product.dart';
 
 import 'akram_login_page.dart';
 import 'nawaf_home_page.dart';
+import 'show_data.dart';
 import 'splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp( //unerror will appear here, but it will go as soon as you import the needed Firebase packages
       options: FirebaseOptions(
-          apiKey: "", //you will find apiKey, appId ... etc indside the google-services.json file that you download from firebase console!
-          appId: "",
+          apiKey: "AIzaSyDDKghGDKkEjYcbTiT9m_cLD2j9IkgiuAE", //you will find apiKey, appId ... etc indside the google-services.json file that you download from firebase console!
+          appId: "37782216272",
           messagingSenderId: "sendid",
-          projectId: "",
-          storageBucket: "")); 
+          projectId: "flutter-course-may",
+          storageBucket: "flutter-course-may.firebasestorage.app")); 
   runApp(const MyApp());
 }
 
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: NawafHomePage(),
+      home: ShowData(),
     );
   }
 }
