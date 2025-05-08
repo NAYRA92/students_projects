@@ -49,7 +49,11 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.w100
               ),)
             ],
-          )
+          ),
+          Hero(
+            tag: 'logo',
+            child: Image.asset("images/logo_1.png",
+            width: 200,))
         ],
       ),
     );

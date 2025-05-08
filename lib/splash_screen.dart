@@ -7,7 +7,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 1),
+    Future.delayed(Duration(seconds: 3),
     (){
       Navigator.pushReplacement(context, 
       MaterialPageRoute(builder: (context)=>HomePage()));
@@ -25,7 +25,9 @@ class SplashScreen extends StatelessWidget {
             fit: BoxFit.cover
             )
         ),
-        child: Image.asset("images/logo_1.png"),
+        child: Hero(
+          tag: 'logo',
+          child: Image.asset("images/logo_1.png")),
       ),
     );
   }
