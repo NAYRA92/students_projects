@@ -30,7 +30,7 @@ class _RegisterNewProductState extends State<RegisterNewProduct> {
               .collection("books")
               .add({
                 "author": _author.text,
-                "releaseDate": _releaseDate.text
+                "releaseDate": _releaseDate.text,
               });
               _author.clear();
               _releaseDate.clear();
