@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:students_projects/register_new_product.dart';
 
 import 'akram_login_page.dart';
+import 'api_data_page.dart';
 import 'may8login_page.dart';
 import 'may8signup_page.dart';
 import 'nawaf_home_page.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProductsList(),
+      home: ApiDataPage(),
     );
   }
 }
