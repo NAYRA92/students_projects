@@ -12,6 +12,7 @@ class RegisterNewProduct extends StatefulWidget {
 class _RegisterNewProductState extends State<RegisterNewProduct> {
   TextEditingController _author = TextEditingController();
   TextEditingController _releaseDate = TextEditingController();
+  TextEditingController _bookImage = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,9 @@ class _RegisterNewProductState extends State<RegisterNewProduct> {
           TextFormField(
            controller:  _releaseDate
           ),
+          TextFormField(
+           controller:  _bookImage
+          ),
           ElevatedButton(
             onPressed: () async {
              await FirebaseFirestore.instance
@@ -31,9 +35,11 @@ class _RegisterNewProductState extends State<RegisterNewProduct> {
               .add({
                 "author": _author.text,
                 "releaseDate": _releaseDate.text,
+                "bookImage": _bookImage.text,
               });
               _author.clear();
               _releaseDate.clear();
+              _bookImage.clear();
             }, 
             child: Text("Submit"))
         ],

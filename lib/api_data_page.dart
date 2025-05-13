@@ -28,6 +28,9 @@ class _ApiDataPageState extends State<ApiDataPage> {
         for(var index in json_data){
           users_list.add(index);
         }
+        setState(() {
+          
+        });
         print(users_list[2]["title"]);
         // print(json_data["name"]);
         // print(response.body);

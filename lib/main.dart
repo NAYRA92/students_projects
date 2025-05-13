@@ -8,6 +8,7 @@ import 'api_data_page.dart';
 import 'may8login_page.dart';
 import 'may8signup_page.dart';
 import 'nawaf_home_page.dart';
+import 'on_boarding_page.dart';
 import 'products_list.dart';
 import 'show_data.dart';
 import 'splash_screen.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ApiDataPage(),
+      home: OnBoardingPage(),
     );
   }
 }

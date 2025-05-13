@@ -74,101 +74,117 @@ class _ShowDataState extends State<ShowData> {
                             children: [
                               ListTile(
                                 tileColor: mainColor,
-                                title: Text(
-                                  booksData[index]["author"],
-                                  style: TextStyle(fontSize: 34),
+                                title: Row(
+                                  children: [
+                                    Text(
+                                      booksData[index]["author"],
+                                      style: TextStyle(fontSize: 34),
+                                    ),
+                                  ],
                                 ),
                                 subtitle: Text(booksData[index]["releaseDate"]),
-                                leading: IconButton(
-                                  onPressed: () {
-                                    showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            title: Text("Edit User"),
-                                            content: Column(
-                                              children: [
-                                                TextFormField(
-                                                  controller: _name,
-                                                  decoration: InputDecoration(
-                                                    hintText:  booksData[index]["author"]
+                                leading: 
+                                
+                                    Image.network(booksData[index]["bookImage"],
+                                    height: 50,),
+                               
+                                trailing: SizedBox(
+                                  width: 100,
+                                  child: Row(
+                                    children: [
+                                       IconButton(
+                                    onPressed: () {
+                                      showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              title: Text("Edit User"),
+                                              content: Column(
+                                                children: [
+                                                  TextFormField(
+                                                    controller: _name,
+                                                    decoration: InputDecoration(
+                                                      hintText:  booksData[index]["author"]
+                                                    ),
+                                                    
                                                   ),
-                                                  
-                                                ),
-                                                TextFormField(
-                                                  controller: _subtitle,
-                                            
-                                                ),
+                                                  TextFormField(
+                                                    controller: _subtitle,
+                                              
+                                                  ),
+                                                ],
+                                              ),
+                                  
+                                              actions: [
+                                                TextButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text("Cancel")),
+                                  
+                                                TextButton(
+                                                    onPressed: () async {
+                                  
+                                                      if(_name.text.isEmpty || _subtitle.text.isEmpty){
+                                                        print("error");
+                                                      }
+                                                      else {
+                                                      await FirebaseFirestore.instance
+                                                      .collection("books")
+                                                      .doc(booksData[index].id)
+                                                      .update({
+                                                        "author": _name.text,
+                                                        "releaseDate": _subtitle.text
+                                                      });
+                                                      
+                                                      Navigator.pop(context);
+                                                      }
+                                                      
+                                                    
+                                  
+                                                    },
+                                                    child: Text("Update")),
                                               ],
-                                            ),
-
-                                            actions: [
-                                              TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text("Cancel")),
-
-                                              TextButton(
-                                                  onPressed: () async {
-
-                                                    if(_name.text.isEmpty || _subtitle.text.isEmpty){
-                                                      print("error");
-                                                    }
-                                                    else {
-                                                    await FirebaseFirestore.instance
-                                                    .collection("books")
-                                                    .doc(booksData[index].id)
-                                                    .update({
-                                                      "author": _name.text,
-                                                      "releaseDate": _subtitle.text
-                                                    });
-                                                    
-                                                    Navigator.pop(context);
-                                                    }
-                                                    
-                                                  
-
-                                                  },
-                                                  child: Text("Update")),
-                                            ],
-                                           
-                                          );
-                                        });
-                                  },
-                                  icon: Icon(Icons.edit),
-                                ),
-                                trailing: IconButton(
-                                  onPressed: () {
-                                    showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            title: Text("Delete User"),
-                                            content: Text(
-                                                "This User will be removed forever"),
-                                            actions: [
-                                              TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text("Cancel")),
-                                              TextButton(
-                                                  onPressed: () async {
-                                                    await FirebaseFirestore
-                                                        .instance
-                                                        .collection("books")
-                                                        .doc(
-                                                            booksData[index].id)
-                                                        .delete();
-                                                        Navigator.pop(context);
-                                                  },
-                                                  child: Text("Delete"))
-                                            ],
-                                          );
-                                        });
-                                  },
-                                  icon: Icon(Icons.delete),
+                                             
+                                            );
+                                          });
+                                    },
+                                    icon: Icon(Icons.edit),
+                                  ),
+                                      IconButton(
+                                        onPressed: () {
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                return AlertDialog(
+                                                  title: Text("Delete User"),
+                                                  content: Text(
+                                                      "This User will be removed forever"),
+                                                  actions: [
+                                                    TextButton(
+                                                        onPressed: () {
+                                                          Navigator.pop(context);
+                                                        },
+                                                        child: Text("Cancel")),
+                                                    TextButton(
+                                                        onPressed: () async {
+                                                          await FirebaseFirestore
+                                                              .instance
+                                                              .collection("books")
+                                                              .doc(
+                                                                  booksData[index].id)
+                                                              .delete();
+                                                              Navigator.pop(context);
+                                                        },
+                                                        child: Text("Delete"))
+                                                  ],
+                                                );
+                                              });
+                                        },
+                                        icon: Icon(Icons.delete),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                               SizedBox(
