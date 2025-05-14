@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:students_projects/chatbot_example.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:students_projects/open_url_icons.dart';
 import 'package:students_projects/register_new_product.dart';
 
 import 'akram_login_page.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OnBoardingPage(),
+      home: OpenUrlIcons(),
     );
   }
 }

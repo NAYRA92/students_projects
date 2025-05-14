@@ -76,7 +76,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       Icons.check_box,
                       size: 50, color: Colors.pink,))
                     :
-                    
                      IconButton(
                     onPressed: _nextPage, 
                     icon: Icon(
