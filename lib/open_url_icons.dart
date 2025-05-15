@@ -28,7 +28,29 @@ class _OpenUrlIconsState extends State<OpenUrlIcons> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(child: Container()),
+          SizedBox(
+            height: 150,
+          ),
+          mySnackBarMethod(context, "Connection Success!", Colors.green),
+          mySnackBarMethod(context, "Try Again!", Colors.amber),
+          mySnackBarMethod(context, "Faild To Connect!", Colors.red),
+          ElevatedButton(
+            onPressed: (){
+               showModalBottomSheet(
+                context: context, 
+                builder: (context){
+                  return BottomSheet(
+                    onClosing: (){}, 
+                    builder: (context){
+                      return Container(
+                        height: 300,
+                      );
+                    });
+                });
+            }, 
+            child: Text("BottomSheet")),
+          Expanded(
+            child: Container()),
           Text("Contact Us:"),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -61,6 +83,25 @@ class _OpenUrlIconsState extends State<OpenUrlIcons> {
           )
         ],
       ),
+    );
+  }
+
+  Widget mySnackBarMethod(BuildContext context,
+  String txt, Color clr) {
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: ElevatedButton(
+            onPressed: (){
+              ScaffoldMessenger.of(context)
+              .showSnackBar(
+                SnackBar(content: Text(txt),
+                backgroundColor: clr,
+                action: SnackBarAction(label: "Undo", 
+                onPressed: (){}),
+                ),
+              );
+            }, 
+            child: Text("OPEN SNACKBAR")),
     );
   }
 }
