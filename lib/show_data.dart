@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:students_projects/constants.dart';
+import 'package:students_projects/display_data_sent.dart';
 import 'package:students_projects/register_new_product.dart';
 
 class ShowData extends StatefulWidget {
@@ -73,6 +74,13 @@ class _ShowDataState extends State<ShowData> {
                           return Column(
                             children: [
                               ListTile(
+                                onTap: (){
+                                  Navigator.push(context, 
+                                  MaterialPageRoute(builder: 
+                                  (context)=>DisplayDataSent(
+                                    name: booksData[index]["author"], 
+                                    adddress: booksData[index]["releaseDate"])));
+                                },
                                 tileColor: mainColor,
                                 title: Row(
                                   children: [

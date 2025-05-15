@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:students_projects/constants.dart';
+import 'package:students_projects/display_data_sent.dart';
 import 'package:students_projects/social_icons_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,7 +41,7 @@ class _OpenUrlIconsState extends State<OpenUrlIcons> {
                 context: context, 
                 builder: (context){
                   return BottomSheet(
-                    onClosing: (){}, 
+                    onClosing: (){},
                     builder: (context){
                       return Container(
                         height: 300,
@@ -49,6 +50,15 @@ class _OpenUrlIconsState extends State<OpenUrlIcons> {
                 });
             }, 
             child: Text("BottomSheet")),
+          ElevatedButton(
+            onPressed: (){
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context)=> 
+              DisplayDataSent(
+                name: "Nayra", 
+                adddress: "Aden, Yemen")));
+            }, 
+            child: Text("SEND DATA")),
           Expanded(
             child: Container()),
           Text("Contact Us:"),
