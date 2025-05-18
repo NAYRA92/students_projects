@@ -6,6 +6,7 @@ import 'package:students_projects/register_new_product.dart';
 
 import 'akram_login_page.dart';
 import 'api_data_page.dart';
+import 'geo_location_on_maps.dart';
 import 'may8login_page.dart';
 import 'may8signup_page.dart';
 import 'nawaf_home_page.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: ShowData(),
+      home: GeoLocationOnMaps(),
     );
   }
 }

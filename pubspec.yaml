@@ -42,6 +42,7 @@ dependencies:
   http:
   fluttericon:
   url_launcher:
+  geolocator: ^13.0.2
 
 dev_dependencies:
   flutter_test:
