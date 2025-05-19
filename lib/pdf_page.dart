@@ -39,15 +39,36 @@ class _PdfPageState extends State<PdfPage> {
 // final file = File('${output.path}/example.pdf');
 // await file.writeAsBytes(await pdf.save());
   }
-  
+   double _sliderValue = 10.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
      body: Center(
-       child: ElevatedButton(
-        onPressed: _creatPdf, 
-        child: Text("Create PDF")),
+       child: Column(
+         children: [
+           ElevatedButton(
+            onPressed: _creatPdf, 
+            child: Text("Create PDF",
+            style: TextStyle(
+              fontSize: _sliderValue
+            ),)),
+
+          //slider
+          Slider(
+            value: _sliderValue,
+            onChanged: (value){
+              setState(() {
+                _sliderValue = value;
+              });
+            },
+            min: 10,
+            max: 74,
+            // divisions: 4,
+            label: "Slider",
+          )
+         ],
+       ),
      ),
     );
   }
