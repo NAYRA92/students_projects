@@ -43,6 +43,9 @@ dependencies:
   fluttericon:
   url_launcher:
   geolocator: ^13.0.2
+  pdf:
+  path_provider:
+  htmltopdfwidgets:
 
 dev_dependencies:
   flutter_test:
