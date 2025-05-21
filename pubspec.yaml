@@ -46,6 +46,7 @@ dependencies:
   pdf:
   path_provider:
   htmltopdfwidgets:
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:students_projects/constants.dart';
-import 'package:students_projects/display_data_sent.dart';
-import 'package:students_projects/register_new_product.dart';
+import 'package:students_projects/online_access/display_data_sent.dart';
+import 'package:students_projects/more_widgets/register_new_product.dart';
 
 class ShowData extends StatefulWidget {
   const ShowData({super.key});

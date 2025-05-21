@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:students_projects/constants.dart';
-import 'package:students_projects/display_data_sent.dart';
-import 'package:students_projects/social_icons_icons.dart';
+import 'package:students_projects/online_access/display_data_sent.dart';
+import 'package:students_projects/more_widgets/social_icons_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OpenUrlIcons extends StatefulWidget {
