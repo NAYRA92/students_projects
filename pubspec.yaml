@@ -47,6 +47,7 @@ dependencies:
   path_provider:
   htmltopdfwidgets:
   shared_preferences:
+  twilio_flutter:
 
 dev_dependencies:
   flutter_test:

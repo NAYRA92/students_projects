@@ -35,11 +35,12 @@ class SharedPreferenceCode extends StatelessWidget {
       ),
     );
   }
+//in second page
+  // await prefs.setBool('isLoggedIn', true);
 
   // دالة للتحقق من حالة تسجيل الدخول واسترجاع الرقم
   Future<Map<String, dynamic>> _checkLoginStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('isLoggedIn', true);
     bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false; // حالة تسجيل الدخول
     return {'isLoggedIn': isLoggedIn};
   }
